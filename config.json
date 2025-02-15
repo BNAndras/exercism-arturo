@@ -541,6 +541,9 @@
         "prerequisites": [],
         "difficulty": 4
       }
+    ],
+    "foregone": [
+      "resistor-color-trio"
     ]
   },
   "key_features": [
