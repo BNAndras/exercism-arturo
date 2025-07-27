@@ -1,0 +1,19 @@
+translate: function[phrase][ 
+    join.with:" " map split.words phrase 'word -> translateWord word 
+] 
+ 
+regexes: [ 
+    {^([^aeiou]*qu)(.+)} 
+    {^([^aeiouy]+)(y.+)} 
+    {^()(xr|yt|[aeiou].+)} 
+    {^([^aeiou]+)(.+)} 
+] 
+ 
+translateWord: function [word][ 
+    loop regexes 'regex [ 
+        captures: match.captures regex word 
+        ... 
+    ] 
+ 
+    word ++ "ay" 
+] 

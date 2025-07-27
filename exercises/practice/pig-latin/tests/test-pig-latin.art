@@ -1,0 +1,119 @@
+import.version:2.0.1 {unitt}!
+import {src/pig-latin}!
+
+suite "Pig Latin" [
+    test "word beginning with a" [
+        result: translate "apple"
+        assert -> "appleay" = result
+    ]
+
+    test.skip "word beginning with e" [
+        result: translate "ear"
+        assert -> "earay" = result
+    ]
+
+    test.skip "word beginning with i" [
+        result: translate "igloo"
+        assert -> "iglooay" = result
+    ]
+
+    test.skip "word beginning with o" [
+        result: translate "object"
+        assert -> "objectay" = result
+    ]
+
+    test.skip "word beginning with u" [
+        result: translate "under"
+        assert -> "underay" = result
+    ]
+
+    test.skip "word beginning with a vowel and followed by a qu" [
+        result: translate "equal"
+        assert -> "equalay" = result
+    ]
+
+    test.skip "word beginning with p" [
+        result: translate "pig"
+        assert -> "igpay" = result
+    ]
+
+    test.skip.skip "word beginning with k" [
+        result: translate "koala"
+        assert -> "oalakay" = result
+    ]
+
+    test.skip "word beginning with x" [
+        result: translate "xenon"
+        assert -> "enonxay" = result
+    ]
+
+    test.skip "word beginning with q without a following u" [
+        result: translate "qat"
+        assert -> "atqay" = result
+    ]
+
+    test.skip "word beginning with consonant and vowel containing qu" [
+        result: translate "liquid"
+        assert -> "iquidlay" = result
+    ]
+
+    test.skip "word beginning with ch" [
+        result: translate "chair"
+        assert -> "airchay" = result
+    ]
+
+    test.skip "word beginning with qu" [
+        result: translate "queen"
+        assert -> "eenquay" = result
+    ]
+
+    test.skip "word beginning with qu and a preceding consonant" [
+        result: translate "square"
+        assert -> "aresquay" = result
+    ]
+
+    test.skip "word beginning with th" [
+        result: translate "therapy"
+        assert -> "erapythay" = result
+    ]
+
+    test.skip "word beginning with thr" [
+        result: translate "thrush"
+        assert -> "ushthray" = result
+    ]
+
+    test.skip "word beginning with sch" [
+        result: translate "school"
+        assert -> "oolschay" = result
+    ]
+
+    test.skip "word beginning with yt" [
+        result: translate "yttria"
+        assert -> "yttriaay" = result
+    ]
+
+    test.skip "word beginning with xr" [
+        result: translate "xray"
+        assert -> "xrayay" = result
+    ]
+
+    test.skip "y is treated like a consonant at the beginning of a word" [
+        result: translate "yellow"
+        assert -> "ellowyay" = result
+    ]
+
+    test.skip "y is treated like a vowel at the end of a consonant cluster" [
+        result: translate "rhythm"
+        assert -> "ythmrhay" = result
+    ]
+
+    test.skip "y as second letter in two letter word" [
+        result: translate "my"
+        assert -> "ymay" = result
+    ]
+
+    test.skip "a whole phrase" [
+        result: translate "quick fast run"
+        assert -> "ickquay astfay unray" = result
+    ]
+]
